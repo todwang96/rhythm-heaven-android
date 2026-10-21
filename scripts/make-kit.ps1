@@ -34,7 +34,22 @@ Set-Content -Encoding ascii -Path (Join-Path $stage "VERSION.txt") -Value ("rhyt
 
 Write-Host "[4/4] zip"
 if (Test-Path $Out) { Remove-Item $Out -Force }
-Compress-Archive -Path (Join-Path $stage "*") -DestinationPath $Out -CompressionLevel Optimal
+Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+$zipOut = [System.IO.Compression.ZipFile]::Open($Out, [System.IO.Compression.ZipArchiveMode]::Create)
+try {
+    $root = (Resolve-Path $stage).Path
+    Get-ChildItem $stage -Recurse -File | ForEach-Object {
+        $rel = $_.FullName.Substring($root.Length + 1).Replace("\", "/")
+        $entry = $zipOut.CreateEntry($rel, [System.IO.Compression.CompressionLevel]::Optimal)
+        $entry.LastWriteTime = $_.LastWriteTime
+        $in = [System.IO.File]::OpenRead($_.FullName)
+        try {
+            $outStream = $entry.Open()
+            try { $in.CopyTo($outStream) } finally { $outStream.Dispose() }
+        } finally { $in.Dispose() }
+    }
+} finally { $zipOut.Dispose() }
 Remove-Item -Recurse -Force $stage
 
 $size = (Get-Item $Out).Length
