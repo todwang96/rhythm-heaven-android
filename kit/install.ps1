@@ -1,4 +1,4 @@
-# Install the APK and put the data package on the device.
+﻿# Install the APK and put the data package on the device.
 # Usage: powershell -ExecutionPolicy Bypass -File install.ps1 [-Serial <adb serial>] [-Apk path] [-Package path]
 param([string]$Serial = "", [string]$Apk = "", [string]$Package = "")
 $ErrorActionPreference = "Stop"

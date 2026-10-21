@@ -1,4 +1,4 @@
-# Build out\rhdata-pack.zip for the Rhythm Heaven Android launcher.
+﻿# Build out\rhdata-pack.zip for the Rhythm Heaven Android launcher.
 # Usage: powershell -ExecutionPolicy Bypass -File package.ps1 [-Dump game-dump] [-Out out\rhdata-pack.zip]
 param([string]$Dump = "", [string]$Out = "")
 $ErrorActionPreference = "Stop"

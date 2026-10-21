@@ -1,4 +1,4 @@
-# Build the PC-side kit zip: kit template + prebuilt APK + source snapshot.
+﻿# Build the PC-side kit zip: kit template + prebuilt APK + source snapshot.
 # Usage: powershell -ExecutionPolicy Bypass -File scripts\make-kit.ps1 [-Version 0.1.0] [-Apk <path>]
 param([string]$Version = "0.1.0", [string]$Apk = "", [string]$Out = "")
 $ErrorActionPreference = "Stop"
