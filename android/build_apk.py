@@ -20,10 +20,34 @@ PORT = ROOT.parent
 APP = ROOT / "app"
 OUT = ROOT / "out"
 
-SDK = Path("C:/Users/Administrator/AppData/Local/Android/Sdk")
-BUILD_TOOLS = SDK / "build-tools/36.0.0"
-PLATFORM = SDK / "platforms/android-36/android.jar"
-JDK = Path("C:/Users/Administrator/AppData/Local/Programs/jdk-17.0.20.1+1")
+def find_sdk():
+    for var in ("ANDROID_HOME", "ANDROID_SDK_ROOT"):
+        value = os.environ.get(var)
+        if value and Path(value).is_dir():
+            return Path(value)
+    for candidate in (Path.home() / "AppData/Local/Android/Sdk", Path("/usr/local/lib/android/sdk")):
+        if candidate.is_dir():
+            return candidate
+    sys.exit("找不到 Android SDK。请设置 ANDROID_HOME。")
+
+def newest_child(directory, prefix):
+    items = sorted((p for p in directory.glob(prefix + "*") if p.is_dir()),
+                   key=lambda p: p.name, reverse=True)
+    if not items:
+        sys.exit(f"SDK 里缺少 {prefix}*：{directory}")
+    return items[0]
+
+SDK = find_sdk()
+BUILD_TOOLS = Path(os.environ.get("DM_BUILD_TOOLS") or newest_child(SDK / "build-tools", ""))
+PLATFORM = newest_child(SDK / "platforms", "android-") / "android.jar"
+_jdk = os.environ.get("DM_JAVA_HOME") or os.environ.get("JAVA_HOME")
+if _jdk:
+    JDK = Path(_jdk)
+else:
+    _java = shutil.which("java")
+    if not _java:
+        sys.exit("找不到 java。请设置 JAVA_HOME（JDK 17）。")
+    JDK = Path(_java).resolve().parent.parent
 PY = sys.executable
 
 PACKAGE = "com.rhport.rhythm"

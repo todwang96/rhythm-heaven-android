@@ -11,6 +11,7 @@
   python build.py --syntax
 """
 import argparse
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -18,11 +19,35 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent          # rh-port/android
 PORT = ROOT.parent                              # rh-port
 TOUCH = PORT / "Touchable"
-UPSTREAM = PORT / ".nitenphone/dependencies/d2r-mobile"
-WORK = PORT / "work/rhythm-heaven"
+UPSTREAM = Path(os.environ.get("DM_DEPENDENCY") or (PORT / ".nitenphone/dependencies/d2r-mobile"))
+WORK = Path(os.environ.get("RH_WORK") or (PORT / "work/rhythm-heaven"))
 
-CLANG = Path("D:/workspace/2026-10-17-22-51-50/d2r-android/tools/ndkdl/android-ndk-r28c/"
-             "toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe")
+def find_clang():
+    """Locate the NDK clang: $DM_CLANG / $RH_CLANG, or an NDK from the usual env vars."""
+    hosts = ("windows-x86_64", "darwin-x86_64", "linux-x86_64")
+    candidates = []
+    for var in ("DM_CLANG", "RH_CLANG"):
+        value = os.environ.get(var)
+        if value:
+            candidates.append(Path(value))
+    for var in ("ANDROID_NDK_HOME", "ANDROID_NDK_ROOT", "DM_ANDROID_NDK"):
+        root = os.environ.get(var)
+        if root:
+            for host in hosts:
+                candidates.append(Path(root) / "toolchains/llvm/prebuilt" / host / "bin/clang.exe")
+    for var in ("ANDROID_HOME", "ANDROID_SDK_ROOT"):
+        sdk = os.environ.get(var)
+        if not sdk:
+            continue
+        for ndk in sorted((Path(sdk) / "ndk").glob("*"), reverse=True):
+            for host in hosts:
+                candidates.append(ndk / "toolchains/llvm/prebuilt" / host / "bin/clang.exe")
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
+    sys.exit("找不到 clang。请设置 ANDROID_NDK_HOME（NDK r28）或 DM_CLANG 指向 clang.exe。")
+
+CLANG = find_clang()
 TARGET = "aarch64-linux-android29"
 
 DEFINES = [

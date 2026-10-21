@@ -14,12 +14,12 @@ param(
 $ErrorActionPreference = "Stop"
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path      # rh-port/android
 $port = Split-Path -Parent $here                             # rh-port
-$adb = "C:\Users\Administrator\AppData\Local\Android\Sdk\platform-tools\adb.exe"
+$adb = if ($env:ADB) { $env:ADB } else { "adb" }
 if (-not (Test-Path $adb)) { $adb = "adb" }
 if (-not $Apk) { $Apk = Join-Path $here "out\rhythm-heaven-android-release.apk" }
 if (-not (Test-Path $Apk)) {
     Write-Host "找不到 APK：$Apk" -ForegroundColor Red
-    Write-Host "先构建：python rh-port/android/build_apk.py --release" -ForegroundColor Yellow
+    Write-Host "先构建：powershell -ExecutionPolicy Bypass -File scripts\build.ps1 -Release" -ForegroundColor Yellow
     exit 1
 }
 

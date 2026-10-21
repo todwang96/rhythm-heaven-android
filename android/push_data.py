@@ -15,19 +15,31 @@ app 所有、adb 进不去。media 走路径级授权，双方都能访问，且
   python push_data.py --check    # 只看设备上现有的
 """
 import argparse
+import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
 
-ADB = Path("C:/Users/Administrator/AppData/Local/Android/Sdk/platform-tools/adb.exe")
+def find_adb():
+    value = os.environ.get("ADB")
+    if value:
+        return Path(value)
+    found = shutil.which("adb")
+    if found:
+        return Path(found)
+    sys.exit("找不到 adb。请设置 ADB 或把 platform-tools 加进 PATH。")
+
+ADB = find_adb()
 PKG = "com.rhport.rhythm"
 DEST = f"/sdcard/Android/media/{PKG}/rhdata"
 
 PORT = Path(__file__).resolve().parent.parent
-PATCHED = PORT / "work/rhythm-heaven/patched-android"
-ROMFS = Path("D:/workspace/2026-10-17-22-51-50/rh/romfs")
-ROMFS_IMAGE = Path("D:/workspace/2026-10-17-22-51-50/rh/romfs.img")
-SHADERS = PORT / "work/shaders/vk-cache"
+DUMP = Path(os.environ.get("RH_GAME_DUMP") or (PORT / "game-dump"))
+PATCHED = Path(os.environ.get("RH_WORK") or (PORT / "work/rhythm-heaven")) / "patched-android"
+SHADERS = Path(os.environ.get("RH_SHADERS") or (PORT / "work/shaders/vk-cache"))
+ROMFS = DUMP / "romfs"
+ROMFS_IMAGE = DUMP / "romfs.img"
 SERIAL = None   # --serial 指定设备；不填则用 adb 的第一台
 
 

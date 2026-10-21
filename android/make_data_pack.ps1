@@ -4,15 +4,18 @@
 param(
     [string]$Out = "",
     [switch]$Compress,
-    [string]$RomfsImage = "D:\workspace\2026-10-17-22-51-50\rh\romfs.img",
+    [string]$RomfsImage = "",
     [switch]$Tree
 )
 $ErrorActionPreference = "Stop"
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path   # rh-port/android
 $port = Split-Path -Parent $here
-$romfs   = "D:\workspace\2026-10-17-22-51-50\rh\romfs"
-$modules = Join-Path $port "work\rhythm-heaven\patched-android"
-$shaders = Join-Path $port "work\shaders\vk-cache"
+$gameDump = if ($env:RH_GAME_DUMP) { $env:RH_GAME_DUMP } else { Join-Path $port "game-dump" }
+if (-not $RomfsImage) { $RomfsImage = Join-Path $gameDump "romfs.img" }
+$romfs   = Join-Path $gameDump "romfs"
+$work    = if ($env:RH_WORK) { $env:RH_WORK } else { Join-Path $port "work\rhythm-heaven" }
+$modules = Join-Path $work "patched-android"
+$shaders = if ($env:RH_SHADERS) { $env:RH_SHADERS } else { Join-Path $port "work\shaders\vk-cache" }
 if (-not $Out) { $Out = Join-Path $here "out\rhdata-pack.zip" }
 if (Test-Path $Out) { Remove-Item $Out -Force }
 New-Item -ItemType Directory -Force -Path (Split-Path -Parent $Out) | Out-Null
