@@ -1,0 +1,19 @@
+# game data, keys and generated artifacts are never committed
+game-dump/
+work/
+out/
+.nitenphone/
+rhdata/
+*.apk
+*.so
+*.bin
+*.img
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+android/build/
+android/out/
+tools/__pycache__/

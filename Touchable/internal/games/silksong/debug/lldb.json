@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "module_breakpoints": [
+    {
+      "module": "main",
+      "offset": "0x249fe80",
+      "label": "LoadSceneStart"
+    },
+    {
+      "module": "main",
+      "offset": "0x5b90d10",
+      "label": "AddressablesInit"
+    },
+    {
+      "module": "main",
+      "offset": "0x5babee0",
+      "label": "InitializationExecute"
+    },
+    {
+      "module": "main",
+      "offset": "0x5f5c460",
+      "label": "UnityLog"
+    },
+    {
+      "module": "main",
+      "offset": "0x5f5c6a0",
+      "label": "UnityException"
+    },
+    {
+      "module": "main",
+      "offset": "0x64a99b0",
+      "label": "BeginWebRequest"
+    }
+  ],
+  "symbol_breakpoints": [
+    {
+      "symbol": "stat",
+      "label": "stat",
+      "kind": "guest"
+    },
+    {
+      "symbol": "open",
+      "label": "open",
+      "kind": "guest"
+    },
+    {
+      "symbol": "h_fs_GetEntryType",
+      "label": "GetEntryType",
+      "kind": "host"
+    }
+  ],
+  "main_build_id": "fc9ea4ccc955d5799f37752b2d730b31",
+  "note": "Offsets are for update 655360 (1.0.30000). The v0 offsets were 0x2431150, 0x587b1c0, 0x5896390, 0x5ae34f0, 0x5ae3730, 0x6030190."
+}

@@ -1,0 +1,47 @@
+{
+  "title_id": "010013c00e930000",
+  "package_version": 655360,
+  "display_version": "1.0.30000",
+  "unity_version": "6000.0.50f1-uum-100966-branch1",
+  "upstream_revision": "2eb5758771f110cd53082b999d88d242766610da",
+  "runtime_modules": [
+    "main",
+    "subsdk0",
+    "sdk"
+  ],
+  "rtld_note": "The upstream host implements the loader. Do not execute the Switch rtld module in the host.",
+  "modules": {
+    "main": {
+      "build_id": "fc9ea4ccc955d5799f37752b2d730b3100000000000000000000000000000000",
+      "sha256": "23bb2faa28cacddd44591379b6d3e80a4193f907433b334ba7a46d8dcb3d088c"
+    },
+    "rtld": {
+      "build_id": "93cb8383d7a54c0b4237253f20de5021008374dd000000000000000000000000",
+      "sha256": "5bd0887d88e026d2635255f8ad0adb4e40be377fcd81dce00c74f2906a9461fb"
+    },
+    "sdk": {
+      "build_id": "e01950c58e17b080c90494784ea1dd29e9dbd486000000000000000000000000",
+      "sha256": "91cab275dceffdfe0c7d33472c3c001309e7c2b1034d13005fa16f9d46645144"
+    },
+    "subsdk0": {
+      "build_id": "c89c804fc3b26757661a70fc125aa92331ecc6fe000000000000000000000000",
+      "sha256": "b380786c76539404662f5cbaecd86e6b7e51b7733a3c0e0826fa40005c459a29"
+    }
+  },
+  "base_package_modules": {
+    "main": {
+      "build_id": "9049ea1c527a35d70f1ece5e784c62e000000000000000000000000000000000",
+      "sha256": "12b9d014e0a65d669459cff91e160b76328ed9b8b523d87c686635e25c70eb5c"
+    },
+    "note": "v0 main. sdk, subsdk0, and rtld are unchanged in update 655360."
+  },
+  "environment": {
+    "DM_NVN_TBDR": "1",
+    "SS_DISPLAY_HZ": "120",
+    "SS_RENDER_HEIGHT": "1080"
+  },
+  "shader_exefs": true,
+  "shader_functional_aliases": true,
+  "shader_warmup_seconds": 20,
+  "status": "Verified module profile for package v655360. See game.json for adapter status. See README.md for current test coverage."
+}

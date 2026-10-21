@@ -1,0 +1,28 @@
+diff --git a/main.c b/main.c
+index 07f53cb..e526f17 100644
+--- a/main.c
++++ b/main.c
+@@ -203,7 +203,7 @@ int main(int argc, char **argv) {
+         switch (c)
+         {
+             case 'i':
+-                nca_ctx.tool_ctx->action |= ACTION_INFO;
++                nca_ctx.tool_ctx->action = ACTION_INFO;
+                 break;
+             case 'x':
+                 nca_ctx.tool_ctx->action |= ACTION_EXTRACT;
+diff --git a/nca.c b/nca.c
+index 8a84366..2ead2be 100644
+--- a/nca.c
++++ b/nca.c
+@@ -1068,6 +1068,10 @@ void nca_process_ivfc_section(nca_section_ctx_t *ctx) {
+     }
+ 
+     ctx->romfs_ctx.romfs_offset = ctx->romfs_ctx.ivfc_levels[IVFC_MAX_LEVEL - 1].data_offset;
++    /* Raw extraction must not interpret a compressed RomFS as plain RomFS. */
++    if (ctx->tool_ctx->action & ACTION_RAW) {
++        return;
++    }
+     nca_section_fseek(ctx, ctx->romfs_ctx.romfs_offset);
+     if (nca_section_fread(ctx, &ctx->romfs_ctx.header, sizeof(romfs_hdr_t)) != sizeof(romfs_hdr_t)) {
+         fprintf(stderr, "Failed to read RomFS header!\n");

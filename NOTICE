@@ -1,0 +1,24 @@
+Third-party code used by this project
+=====================================
+
+Touchable — https://github.com/MZhao-ouo/Touchable
+  MIT License, Copyright (c) 2026 mzhao.
+  Vendored under Touchable/ (game adaptation layers, internal tooling).
+  This repository carries modifications for an Android host.
+
+d2r-mobile — https://github.com/jhaizhou-ops/d2r-mobile
+  MIT License, Copyright (c) 2026 jhaizhou.
+  Not vendored; scripts/setup.ps1 fetches the pinned commit and applies
+  patches/d2r-mobile-android.patch (Android platform layer + Vulkan backend
+  changes for this port).
+
+d2r-android — https://github.com/sydeEvans/d2r-android
+  MIT License, Copyright (c) 2026 jhaizhou.
+  tools/patch_nso.py and tools/nso.py are vendored from its dm/tools (generic
+  Switch NSO rewriter used to prepare the guest modules).
+
+dmsh_xlate / Ryujinx shader tooling (inside d2r-mobile) is used to translate the
+game's shaders to SPIR-V; see its own LICENSE files under dm/third_party.
+
+No game content is included in this repository: no RomFS data, no module
+binaries, no keys, no screenshots of copyrighted artwork.

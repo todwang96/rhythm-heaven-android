@@ -1,0 +1,43 @@
+{
+  "title_id": "0100d9f01d474000",
+  "package_version": 0,
+  "sdk_version": "21.4.5.0",
+  "upstream_revision": "2eb5758771f110cd53082b999d88d242766610da",
+  "runtime_modules": [
+    "main",
+    "sdk"
+  ],
+  "rtld_note": "The upstream host implements the loader. Do not execute the Switch rtld module in the host.",
+  "modules": {
+    "main": {
+      "build_id": "03ff4a3bec96bde3a2e37ce3aa4caa0cae8935a8000000000000000000000000",
+      "sha256": "494c35e74dae893615980134f8be7673779f8d4b9eb9601e0f1b130d5ee1870e"
+    },
+    "rtld": {
+      "build_id": "d5fcb1e336b4ed05597c589eea2fdd0624b37023000000000000000000000000",
+      "sha256": "e01d34bb149c30ad27c0872604e795a4a22e35fedc0440f78e32b610a94ecad6"
+    },
+    "sdk": {
+      "build_id": "cff2680fe74cb7d8d13b525730d1a7fd9a3f36f0000000000000000000000000",
+      "sha256": "ed23f788d9e4b27d726f60cdf64674f54f590113f584c0e9d9ec20e3f6c89a1a"
+    }
+  },
+  "shader_files": [
+    "shader/shader_NX.bnsh"
+  ],
+  "nvn_bindings": {
+    "texture": [
+      "0x20",
+      "0x120"
+    ],
+    "evidence": "shader_NX.bnsh reflection gives tex slot 0 and tex2 slot 1; its shaders read bound handles at bank 2 words 8 and 10."
+  },
+  "vertex_attribute_types": {
+    "2": "uint"
+  },
+  "nvn_window_origin": "lower-left",
+  "environment": {
+    "DM_NVN_AMBIENT_BARS": "0.8"
+  },
+  "status": "Module hashes are pinned. See game.json for adapter status. See README.md for current test coverage."
+}

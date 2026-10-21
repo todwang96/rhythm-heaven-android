@@ -1,0 +1,344 @@
+{
+  "recorded_utc": "2026-10-14T04:42:03.944894+00:00",
+  "source_moves": [
+    {
+      "from": "runtime/ss_haptics.c",
+      "to": "runtime/common/ss_haptics.c"
+    },
+    {
+      "from": "runtime/ss_indirect_branch.c",
+      "to": "runtime/common/ss_indirect_branch.c"
+    },
+    {
+      "from": "runtime/ss_display.h",
+      "to": "runtime/common/ss_display.h"
+    },
+    {
+      "from": "runtime/ss_thread.c",
+      "to": "runtime/common/ss_thread.c"
+    },
+    {
+      "from": "runtime/ss_nvn.inc",
+      "to": "runtime/common/ss_nvn.inc"
+    },
+    {
+      "from": "runtime/ss_thread_suspend.inc",
+      "to": "runtime/common/ss_thread_suspend.inc"
+    },
+    {
+      "from": "runtime/ss_mtl_clear.inc",
+      "to": "runtime/common/ss_mtl_clear.inc"
+    },
+    {
+      "from": "runtime/ss_net.c",
+      "to": "runtime/common/ss_net.c"
+    },
+    {
+      "from": "runtime/ss_platform.c",
+      "to": "runtime/common/ss_platform.c"
+    },
+    {
+      "from": "runtime/ss_ro.c",
+      "to": "runtime/common/ss_ro.c"
+    },
+    {
+      "from": "runtime/ss_host.c",
+      "to": "runtime/common/ss_host.c"
+    },
+    {
+      "from": "runtime/ss_haptics.h",
+      "to": "runtime/common/ss_haptics.h"
+    },
+    {
+      "from": "runtime/ss_shader_capture.c",
+      "to": "runtime/common/ss_shader_capture.c"
+    },
+    {
+      "from": "runtime/ss_memory.inc",
+      "to": "runtime/common/ss_memory.inc"
+    },
+    {
+      "from": "runtime/ss_display.c",
+      "to": "games/silksong/runtime/ss_display.c"
+    },
+    {
+      "from": "runtime/ss_audio.c",
+      "to": "runtime/common/ss_audio.c"
+    },
+    {
+      "from": "runtime/ss_time.c",
+      "to": "runtime/common/ss_time.c"
+    },
+    {
+      "from": "runtime/ss_fs_lookup.inc",
+      "to": "runtime/common/ss_fs_lookup.inc"
+    },
+    {
+      "from": "runtime/ss_indirect_branch.h",
+      "to": "runtime/common/ss_indirect_branch.h"
+    },
+    {
+      "from": "runtime/ss_diagnostics.c",
+      "to": "runtime/common/ss_diagnostics.c"
+    },
+    {
+      "from": "runtime/ss_nvn_commands.inc",
+      "to": "runtime/common/ss_nvn_commands.inc"
+    },
+    {
+      "from": "runtime/ss_fs.c",
+      "to": "runtime/common/ss_fs.c"
+    },
+    {
+      "from": "runtime/ss_log.c",
+      "to": "runtime/common/ss_log.c"
+    },
+    {
+      "from": "runtime/ss_input.c",
+      "to": "runtime/common/ss_input.c"
+    },
+    {
+      "from": "runtime/ss_relr.c",
+      "to": "runtime/common/ss_relr.c"
+    },
+    {
+      "from": "runtime/ss_shader_chain.h",
+      "to": "games/silksong/runtime/ss_shader_chain.h"
+    },
+    {
+      "from": "profiles/silksong-switch-base.json",
+      "to": "games/silksong/profile.json"
+    },
+    {
+      "from": "ios/Silksong/App.m",
+      "to": "platform/ios/App.m"
+    },
+    {
+      "from": "ios/Silksong/Haptics.m",
+      "to": "platform/ios/Haptics.m"
+    },
+    {
+      "from": "ios/Silksong/Info.plist",
+      "to": "platform/ios/Info.plist"
+    },
+    {
+      "from": "ios/Silksong/Assets.xcassets",
+      "to": "games/silksong/ios/Assets.xcassets"
+    },
+    {
+      "from": "ios/Silksong/Artwork",
+      "to": "games/silksong/ios/Artwork"
+    },
+    {
+      "from": "ios/Probe",
+      "to": "platform/ios/probe/Probe"
+    },
+    {
+      "from": "ios/Probe.xcodeproj",
+      "to": "platform/ios/probe/Probe.xcodeproj"
+    },
+    {
+      "from": "ios/Silksong.xcodeproj",
+      "to": "build/games/silksong/legacy/Silksong.xcodeproj"
+    },
+    {
+      "from": "tools/d2r-silksong.patch",
+      "to": "patches/d2r-mobile.patch"
+    },
+    {
+      "from": "tools/hactool.patch",
+      "to": "patches/hactool.patch"
+    },
+    {
+      "from": "tests/test_display.c",
+      "to": "games/silksong/tests/test_display.c"
+    },
+    {
+      "from": "tests/test_viewport.py",
+      "to": "games/silksong/tests/test_viewport.py"
+    },
+    {
+      "from": "tests/test_world_projection.py",
+      "to": "games/silksong/tests/test_world_projection.py"
+    },
+    {
+      "from": "tests/test_time.c",
+      "to": "tests/common/test_time.c"
+    },
+    {
+      "from": "tests/test_thread_suspend.c",
+      "to": "tests/common/test_thread_suspend.c"
+    },
+    {
+      "from": "tests/test_memory.c",
+      "to": "tests/common/test_memory.c"
+    },
+    {
+      "from": "tests/test_haptics.c",
+      "to": "tests/common/test_haptics.c"
+    },
+    {
+      "from": "tests/test_game_formats.py",
+      "to": "tests/common/test_game_formats.py"
+    },
+    {
+      "from": "tests/branch_probe.c",
+      "to": "tests/common/branch_probe.c"
+    },
+    {
+      "from": "tests/branch_probe.h",
+      "to": "tests/common/branch_probe.h"
+    },
+    {
+      "from": "tests/branch_snapshot.S",
+      "to": "tests/common/branch_snapshot.S"
+    },
+    {
+      "from": "tools/run_movie_test.sh",
+      "to": "build/games/silksong/legacy/tools/run_movie_test.sh",
+      "replacement": "games/silksong/tools/run_movie_test.py"
+    }
+  ],
+  "notes": [
+    "Game assets, keys, save files, and signed IPAs are preserved."
+  ],
+  "data_moves": [
+    {
+      "from": "work/reports",
+      "to": "work/silksong/reports",
+      "compatibility_link": "silksong/reports"
+    },
+    {
+      "from": "work/saves",
+      "to": "work/silksong/saves",
+      "compatibility_link": "silksong/saves"
+    },
+    {
+      "from": "work/temp",
+      "to": "work/silksong/temp",
+      "compatibility_link": "silksong/temp"
+    },
+    {
+      "from": "work/device-dump",
+      "to": "work/silksong/device-dump",
+      "compatibility_link": "silksong/device-dump"
+    },
+    {
+      "from": "build/ipa",
+      "to": "build/games/silksong/ipa",
+      "compatibility_link": "games/silksong/ipa"
+    },
+    {
+      "from": "build/app-icon-source",
+      "to": "build/games/silksong/legacy/app-icon-source",
+      "compatibility_link": "games/silksong/legacy/app-icon-source"
+    },
+    {
+      "from": "build/base-subsdk0.image",
+      "to": "build/games/silksong/legacy/base-subsdk0.image",
+      "compatibility_link": "games/silksong/legacy/base-subsdk0.image"
+    },
+    {
+      "from": "build/device-details.json",
+      "to": "build/games/silksong/legacy/device-details.json",
+      "compatibility_link": "games/silksong/legacy/device-details.json"
+    },
+    {
+      "from": "build/device-details.log",
+      "to": "build/games/silksong/legacy/device-details.log",
+      "compatibility_link": "games/silksong/legacy/device-details.log"
+    },
+    {
+      "from": "build/diagnostics",
+      "to": "build/games/silksong/legacy/diagnostics",
+      "compatibility_link": "games/silksong/legacy/diagnostics"
+    },
+    {
+      "from": "build/host",
+      "to": "build/games/silksong/legacy/host",
+      "compatibility_link": "games/silksong/legacy/host"
+    },
+    {
+      "from": "build/icon-backup",
+      "to": "build/games/silksong/legacy/icon-backup",
+      "compatibility_link": "games/silksong/legacy/icon-backup"
+    },
+    {
+      "from": "build/ios-game",
+      "to": "build/games/silksong/legacy/ios-game",
+      "compatibility_link": "games/silksong/legacy/ios-game"
+    },
+    {
+      "from": "build/ios-generated",
+      "to": "build/games/silksong/legacy/ios-generated",
+      "compatibility_link": "games/silksong/legacy/ios-generated"
+    },
+    {
+      "from": "build/ios-icon-check",
+      "to": "build/games/silksong/legacy/ios-icon-check",
+      "compatibility_link": "games/silksong/legacy/ios-icon-check"
+    },
+    {
+      "from": "build/logs",
+      "to": "build/games/silksong/legacy/logs",
+      "compatibility_link": "games/silksong/legacy/logs"
+    },
+    {
+      "from": "build/phone-saves",
+      "to": "build/games/silksong/legacy/phone-saves",
+      "compatibility_link": "games/silksong/legacy/phone-saves"
+    },
+    {
+      "from": "build/scratch",
+      "to": "build/games/silksong/legacy/scratch",
+      "compatibility_link": "games/silksong/legacy/scratch"
+    },
+    {
+      "from": "build/shots",
+      "to": "build/games/silksong/legacy/shots",
+      "compatibility_link": "games/silksong/legacy/shots"
+    },
+    {
+      "from": "build/tests",
+      "to": "build/games/silksong/legacy/tests",
+      "compatibility_link": "games/silksong/legacy/tests"
+    },
+    {
+      "from": "build/cache",
+      "to": "build/tooling/cache",
+      "compatibility_link": "tooling/cache"
+    },
+    {
+      "from": "build/downloads",
+      "to": "build/tooling/downloads",
+      "compatibility_link": "tooling/downloads"
+    },
+    {
+      "from": "build/ios-probe",
+      "to": "build/probes/legacy/ios-probe",
+      "compatibility_link": "probes/legacy/ios-probe"
+    },
+    {
+      "from": "build/ios-probe-install.json",
+      "to": "build/probes/legacy/ios-probe-install.json",
+      "compatibility_link": "probes/legacy/ios-probe-install.json"
+    },
+    {
+      "from": "MyGameFiles/Hollow Knight Silksong [010013C00E930000][v0].nsp",
+      "to": "MyGameFiles/silksong/Hollow Knight Silksong [010013C00E930000][v0].nsp",
+      "compatibility_link": "silksong/Hollow Knight Silksong [010013C00E930000][v0].nsp"
+    },
+    {
+      "from": "MyGameFiles/ProdKeys.-v22.5.0",
+      "to": "MyGameFiles/keys/ProdKeys.-v22.5.0",
+      "compatibility_link": "keys/ProdKeys.-v22.5.0"
+    }
+  ],
+  "updated_utc": "2026-10-14T04:50:37.418590+00:00",
+  "preserved": [
+    "Silksong bundle ID com.mmmz.NitenphoneProbe",
+    "iPhone Documents/Saves/Silksong",
+    "Existing signed IPA bytes",
+    "Original game package and keys contents"
+  ]
+}

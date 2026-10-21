@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "id": "rhythm-heaven",
+  "display_name": "节奏天国",
+  "product_name": "RhythmHeaven",
+  "bundle_id": "com.mmmz.NitenphoneSilksong",
+  "build_version": 34,
+  "title_id": "0100d9f01d474000",
+  "profile": "profile.json",
+  "status": "in-progress",
+  "save_namespace": "rhythm-heaven",
+  "save_directory": "RhythmHeaven",
+  "module_names": [
+    "main",
+    "sdk"
+  ],
+  "runtime_sources": [
+    "runtime/rh_game.c",
+    "runtime/rh_touch.c",
+    "runtime/rh_menu.c",
+    "runtime/rh_menu_logic.c",
+    "runtime/rh_batch.c"
+  ],
+  "common_runtime_sources": [
+    "runtime/common/ss_host.c",
+    "runtime/common/ss_thread.c",
+    "runtime/common/ss_diagnostics.c",
+    "runtime/common/ss_indirect_branch.c",
+    "runtime/common/ss_relr.c",
+    "runtime/common/ss_time.c",
+    "runtime/common/ss_platform.c",
+    "runtime/common/ss_fs.c",
+    "runtime/common/ss_ro.c",
+    "runtime/common/ss_net.c",
+    "runtime/common/ss_input.c",
+    "runtime/common/ss_pointer.c",
+    "runtime/common/ss_haptics.c",
+    "runtime/common/ss_display.c",
+    "runtime/common/ss_shader_capture.c",
+    "runtime/common/ss_audio.c",
+    "runtime/common/ss_log.c",
+    "runtime/common/ss_audren.c",
+    "runtime/common/ss_audio_renderer.c",
+    "runtime/common/ss_services.c"
+  ],
+  "ios_sources": [],
+  "common_ios_sources": [
+    "platform/ios/App.m",
+    "platform/ios/Haptics.m"
+  ],
+  "compile_defines": [
+    "NITENPHONE_SWITCH_RUNTIME",
+    "SS_SHADER_KEY_CODE",
+    "SS_GUEST_LARGE_HEAP",
+    "SS_NVN_LOWER_LEFT_ORIGIN"
+  ],
+  "shader_chain_header": "runtime/ss_shader_chain.h",
+  "adapters": {
+    "runtime": "rhythm-heaven",
+    "ios": "rhythm-heaven",
+    "rewrite": "switch-native",
+    "shader_extract": "nn-gfx-bnsh",
+    "shader_build": "nvn"
+  },
+  "ios": {
+    "deployment_target": "26.0",
+    "touch_layout": "rhythm",
+    "native_drawable": true,
+    "controller_haptics": true,
+    "audio_io_buffer_seconds": 0.005,
+    "localizations": [
+      "en",
+      "en-GB",
+      "fr",
+      "fr-CA",
+      "es",
+      "es-419",
+      "de",
+      "it",
+      "nl",
+      "ja",
+      "ko",
+      "zh-Hans",
+      "zh-Hant"
+    ]
+  },
+  "host": {
+    "deployment_target": "26.0"
+  }
+}
