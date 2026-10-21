@@ -1,4 +1,4 @@
-# Rhythm Heaven Android
+﻿# Rhythm Heaven Android
 
 Runs the **original ARM64 Switch modules of Rhythm Heaven** (节奏天国 / リズム天国) natively on Android:
 the game's own code executes on the device, the NVN graphics layer is reimplemented on top of
@@ -44,7 +44,7 @@ This repository contains **only the host/port code and tools — no game content
 ## Quick start
 
 ```powershell
-git clone https://github.com/<you>/rhythm-heaven-android
+git clone https://github.com/todwang96/rhythm-heaven-android
 cd rhythm-heaven-android
 
 # 1) fetch the pinned d2r-mobile dependency and apply the Android patch

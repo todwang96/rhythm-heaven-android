@@ -1,4 +1,4 @@
-# 节奏天国 Android
+﻿# 节奏天国 Android
 
 把《节奏天国》（リズム天国 / Rhythm Heaven）**原版 Switch ARM64 模块**直接跑在 Android 上：
 游戏自己的代码在手机上原生执行，NVN 图形层重实现为 **Vulkan**，声音走 **AAudio**，
@@ -37,7 +37,7 @@
 ## 快速开始
 
 ```powershell
-git clone https://github.com/<you>/rhythm-heaven-android
+git clone https://github.com/todwang96/rhythm-heaven-android
 cd rhythm-heaven-android
 
 # 1) 拉取固定版本的 d2r-mobile 依赖并打补丁
