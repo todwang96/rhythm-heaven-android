@@ -100,3 +100,16 @@ nvn_vk.c  →  Vulkan（Adreno）        AAudio ← ss_audio_*        Android �
 - 以及 shader 翻译用到的 Ryujinx / dmsh_xlate 项目。
 
 详见 `NOTICE`。本项目自身代码为 MIT（见 `LICENSE`）。
+
+## PC 数据包工具包（推荐）
+
+[Releases](https://github.com/todwang96/rhythm-heaven-android/releases) 里还提供
+`rhythm-heaven-kit-<version>.zip`：电脑端工具包，用你自己的游戏 dump 生成数据包并引导安装：
+
+1. 解压后把解包好的文件放进 `game-dump\`（`exefs\main`、`exefs\sdk`、`romfs.img`）；
+2. 运行 `package.ps1`（内部复用 `source\scripts\` 准备模块和数据包）；
+3. 运行 `install.ps1 -Serial <adb 序列号>`，在启动器里导入数据包。
+
+工具包里的 `SKILL.md` 可以让 AI agent 按一句话完成整个流程
+（"use the rhythm-heaven-package skill to build my package and install it"）。
+需要重新生成工具包时运行 `scripts\make-kit.ps1`。

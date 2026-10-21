@@ -112,3 +112,17 @@ see `LICENSE`.
 - and the Ryujinx/dmsh_xlate projects used for shader translation.
 
 See `NOTICE` for details. This port's own code is MIT (see `LICENSE`).
+
+## PC package kit (recommended)
+
+The [latest release](https://github.com/todwang96/rhythm-heaven-android/releases) also ships
+`rhythm-heaven-kit-<version>.zip` — a PC-side kit that builds the data package from your own game
+dump and walks you through installing it:
+
+1. unzip the kit and put your extracted files in `game-dump\` (`exefs\main`, `exefs\sdk`, `romfs.img`);
+2. run `package.ps1` (it uses `source\scripts\` to prepare modules/the data package);
+3. run `install.ps1 -Serial <adb serial>` and import the package from the launcher.
+
+`SKILL.md` in the kit lets an AI agent drive the whole workflow
+("use the rhythm-heaven-package skill to build my package and install it").
+Regenerate the kit from source with `scripts\make-kit.ps1`.
