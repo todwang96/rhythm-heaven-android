@@ -109,7 +109,6 @@ see `LICENSE`.
 
 - [Touchable](https://github.com/MZhao-ouo/Touchable) (MIT) — game adaptation runtime.
 - [d2r-mobile](https://github.com/jhaizhou-ops/d2r-mobile) (MIT) — HLE host layer, Vulkan NVN backend.
-- [d2r-android](https://github.com/sydeEvans/d2r-android) (MIT) — NSO rewriter tooling.
 - and the Ryujinx/dmsh_xlate projects used for shader translation.
 
 See `NOTICE` for details. This port's own code is MIT (see `LICENSE`).

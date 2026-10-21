@@ -66,7 +66,8 @@ can also run `hactool -t romfs --outdir=game-dump\romfs game-dump\romfs.img` and
 powershell -ExecutionPolicy Bypass -File scripts\prepare-modules.ps1 -Dump game-dump
 ```
 
-This runs `tools/patch_nso.py` for `main` and `sdk` with:
+This runs the NSO rewriter shipped by the fetched d2r-mobile dependency
+(`.nitenphone/dependencies/d2r-mobile/dm/tools/patch_nso.py`) for `main` and `sdk` with:
 
 ```
 DM_TARGET=android DM_RULESET=native DM_PRIVATE_GATES=0 DM_INDIRECT_TRAPS=1

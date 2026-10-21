@@ -12,10 +12,9 @@ d2r-mobile — https://github.com/jhaizhou-ops/d2r-mobile
   patches/d2r-mobile-android.patch (Android platform layer + Vulkan backend
   changes for this port).
 
-d2r-android — https://github.com/sydeEvans/d2r-android
-  MIT License, Copyright (c) 2026 jhaizhou.
-  tools/patch_nso.py and tools/nso.py are vendored from its dm/tools (generic
-  Switch NSO rewriter used to prepare the guest modules).
+Module rewriting uses the generic Switch NSO rewriter shipped inside the d2r-mobile
+dependency (dm/tools/patch_nso.py, MIT); scripts/prepare-modules.ps1 drives it with
+DM_TARGET=android. No rewriter code is vendored in this repository.
 
 dmsh_xlate / Ryujinx shader tooling (inside d2r-mobile) is used to translate the
 game's shaders to SPIR-V; see its own LICENSE files under dm/third_party.

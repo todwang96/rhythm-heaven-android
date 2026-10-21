@@ -97,7 +97,6 @@ nvn_vk.c  →  Vulkan（Adreno）        AAudio ← ss_audio_*        Android �
 
 - [Touchable](https://github.com/MZhao-ouo/Touchable)（MIT）— 游戏适配运行时。
 - [d2r-mobile](https://github.com/jhaizhou-ops/d2r-mobile)（MIT）— HLE 宿主层、Vulkan NVN 后端。
-- [d2r-android](https://github.com/sydeEvans/d2r-android)（MIT）— NSO 改写工具。
 - 以及 shader 翻译用到的 Ryujinx / dmsh_xlate 项目。
 
 详见 `NOTICE`。本项目自身代码为 MIT（见 `LICENSE`）。

@@ -24,10 +24,15 @@ $env:DM_TARGET = "android"
 $env:DM_RULESET = "native"
 $env:DM_PRIVATE_GATES = "0"
 $env:DM_INDIRECT_TRAPS = "1"
+$rewriter = Join-Path $repo ".nitenphone\dependencies\d2r-mobile\dm\tools\patch_nso.py"
+if (-not (Test-Path $rewriter)) { throw "rewriter missing: run scripts\setup.ps1 first" }
+$python = "python"
+if (-not (Get-Command $python -ErrorAction SilentlyContinue)) { $python = "py" }
+
 foreach ($module in @("main", "sdk")) {
     $nso = Join-Path $Dump "exefs\$module"
     if (-not (Test-Path $nso)) { throw "missing ExeFS module: $nso (see docs/PREPARE-GAME.md)" }
     Write-Host "patch $module ..."
-    python (Join-Path $repo "tools\patch_nso.py") $nso $outDir $module
+    & $python $rewriter $nso $outDir $module
 }
 Write-Host "modules ready: $outDir" -ForegroundColor Green
